@@ -4,6 +4,8 @@ CaptureWebsite records the HTTP resources received by a real browser during a co
 
 A complete capture means everything the controlled browser observed during that visit. It does not include server-side code, databases, server secrets, inaccessible resources, or content the browser never received. The extracted folders are intended for inspection and are not guaranteed to form a runnable offline copy of the site.
 
+## NOTE: Windows SmartScreen may warn about the installer because CaptureWebsite is currently unsigned; click More info → Run anyway if you downloaded it from the official GitHub release.
+
 ## Windows application
 
 1. Run `dist\CaptureWebsite.exe` as a normal user. Do not run it as administrator.
