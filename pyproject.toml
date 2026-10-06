@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capturewebsite"
+version = "2.0.0"
+description = "CaptureWebsite records browser-observed web resources using isolated or app-owned persistent Edge/Chrome sessions."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "CaptureWebsite contributors" }]
+dependencies = [
+  "warcio>=1.7.5,<2",
+  "Brotli>=1.1.0,<2",
+  "playwright>=1.55,<2",
+]
+
+[project.urls]
+Repository = "https://github.com/starlixdev/Capture-Website"
+Issues = "https://github.com/starlixdev/Capture-Website/issues"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<10",
+  "pyinstaller>=6.10,<7",
+]
+
+[project.scripts]
+capturewebsite = "sitecapture.cli.main:main"
+capturewebsite-gui = "sitecapture.gui.app:main"
+sitecapture = "sitecapture.cli.main:main"
+sitecapture-gui = "sitecapture.gui.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
